@@ -1,9 +1,13 @@
 import { useEffect } from "react"
-import { useAppDispatch } from "../utility/type"
+// import { useAppDispatch } from "../utility/type"
 import { getData } from "../redux/actions"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
 const Home = () => {
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   // const [allData, setAllData] = useState<Array<Object>>([])
 
   useEffect(() => {
@@ -13,7 +17,7 @@ const Home = () => {
   return (
     <div>
       <div>
-        <p>Yo</p>
+        <p onClick={() => navigate("/admin")}>Yo</p>
       </div>
     </div>
   )
